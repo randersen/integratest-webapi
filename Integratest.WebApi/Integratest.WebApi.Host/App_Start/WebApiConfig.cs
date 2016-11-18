@@ -4,6 +4,12 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Web.Http;
+using DryIoc;
+using DryIoc.WebApi;
+using Integratest.Data.ServiceInterfaces;
+using Integratest.Data.Services;
+using Integratest.WebApi.Services.Interfaces;
+using Integratest.WebApi.Services.Services;
 using Newtonsoft.Json.Serialization;
 
 namespace Integratest.WebApi.Host
@@ -18,6 +24,13 @@ namespace Integratest.WebApi.Host
 
 
             config.MapHttpAttributeRoutes();
+
+            var c = new Container();
+            c = (Container)c.WithWebApi(config);
+
+            //Register Interfaces/services
+            c.Register<IAccountsService, AccountsService>(Reuse.Singleton);
+            c.Register<IDataAccountsService, DataAccountsService>(Reuse.Singleton);
 
         }
     }
