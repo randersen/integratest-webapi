@@ -76,8 +76,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IAccountsService.cs" />
+    <Compile Include="Interfaces\ITestCaseService.cs" />
     <Compile Include="Services\AccountsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\TestCaseService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

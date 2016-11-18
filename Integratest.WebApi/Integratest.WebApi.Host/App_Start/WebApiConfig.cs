@@ -31,6 +31,8 @@ namespace Integratest.WebApi.Host
             //Register Interfaces/services
             c.Register<IAccountsService, AccountsService>(Reuse.Singleton);
             c.Register<IDataAccountsService, DataAccountsService>(Reuse.Singleton);
+            c.Register<IDataTestCaseService, DataTestCasesService>(Reuse.Singleton);
+            c.Register<ITestCaseService, TestCaseService>(Reuse.Singleton);
 
         }
     }

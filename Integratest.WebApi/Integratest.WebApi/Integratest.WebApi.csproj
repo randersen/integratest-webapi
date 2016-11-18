@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountRequest.cs" />
+    <Compile Include="Models\TestCaseRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
