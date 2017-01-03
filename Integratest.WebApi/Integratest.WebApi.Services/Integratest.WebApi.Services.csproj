@@ -31,6 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.Core.3.3.1\lib\net45\AWSSDK.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AWSSDK.DynamoDBv2, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.DynamoDBv2.3.3.0.1\lib\net45\AWSSDK.DynamoDBv2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DryIoc, Version=2.9.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DryIoc.dll.2.9.0\lib\net45\DryIoc.dll</HintPath>
       <Private>True</Private>
@@ -39,11 +47,13 @@
       <HintPath>..\packages\DryIoc.WebApi.dll.2.1.1\lib\net45\DryIoc.WebApi.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Integratest">
-      <HintPath>..\..\..\integratest\Integratest\Integratest\bin\Debug\Integratest.dll</HintPath>
+    <Reference Include="Integratest, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IntegraTest.1.0.2\lib\net462\Integratest.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Integratest.Data">
-      <HintPath>..\..\..\integratest-data\Integratest.Data\Integratest.Data\bin\Debug\Integratest.Data.dll</HintPath>
+    <Reference Include="Integratest.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IntegraTest-Data.1.0.1\lib\net462\Integratest.Data.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
@@ -89,6 +99,9 @@
       <Project>{86de2263-fd19-4849-a9ba-184e0ab8b3fa}</Project>
       <Name>Integratest.WebApi</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\AWSSDK.DynamoDBv2.3.3.0.1\analyzers\dotnet\cs\AWSSDK.DynamoDBv2.CodeAnalysis.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
