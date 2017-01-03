@@ -48,11 +48,15 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Integratest, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\IntegraTest.1.0.2\lib\net462\Integratest.dll</HintPath>
+      <HintPath>..\packages\IntegraTest.1.0.4\lib\net462\Integratest.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Integratest.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\IntegraTest-Data.1.0.1\lib\net462\Integratest.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JWT, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\JWT.1.3.4\lib\3.5\JWT.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -86,9 +90,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IAccountsService.cs" />
+    <Compile Include="Interfaces\ILoginService.cs" />
     <Compile Include="Interfaces\ITestCaseService.cs" />
     <Compile Include="Services\AccountsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\LoginService.cs" />
     <Compile Include="Services\TestCaseService.cs" />
   </ItemGroup>
   <ItemGroup>

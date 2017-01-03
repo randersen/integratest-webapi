@@ -2,6 +2,7 @@
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using Integratest.Data.DataModels;
 using Integratest.Data.RequestModels;
 using Integratest.Data.ServiceInterfaces;
 using Integratest.Data.Services;
@@ -59,6 +60,26 @@ namespace Integratest.WebApi.Services.Services
             };
 
             return account;
+
+        }
+
+        public async Task<AccountsDto> GetFullAccountByEmail(string userEmail)
+        {
+            var dataAccount = await _dataAccountsService.GetAccountByEmail(userEmail);
+
+            if (dataAccount.Count == 0)
+            {
+                return null;
+            }
+
+            if (dataAccount.Count > 1)
+            {
+                throw new DuplicateNameException($"Multiple Accounts exist with email: {userEmail}");
+            }
+
+            var user = dataAccount.FirstOrDefault();
+
+            return user;
 
         }
 
